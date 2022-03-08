@@ -1,0 +1,13 @@
+testePrático3\runner\RunnerTest.class
+testePrático3\pages\BasePage.class
+testePrático3\maps\AdvantageShoppingMaps.class
+testePrático3\repository\ConnectionFactory.class
+testePrático3\steps\BaseTest.class
+TestePratico1\Teste.class
+TestePratico1\RecargaSaldoTelefone.class
+TestePratico1\Recarga.class
+testePrático3\steps\AdvantageShoppingSteps.class
+TestePratico1\RecargaSaldoConta.class
+testePrático3\repository\AdvantageShoppingQuerys.class
+testePrático3\pages\AdvantageShoppingPage.class
+testePrático3\driver\Driver.class

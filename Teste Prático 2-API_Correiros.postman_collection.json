@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "b3d80954-722a-4384-abee-939d4d32873d",
+		"name": "Teste Prático 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API dos correios",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"var jsonObect = xml2Json(responseBody)\r",
+							"\r",
+							"if(responseCode.code === 500){\r",
+							"    pm.test(\"CEP inválido\");\r",
+							"}\r",
+							"if(responseCode.code === 200 ){\r",
+							"    var verificaCEP = jsonObect ['soap:Envelope']['soap:Body']['ns2:consultaCEPResponse']['return'];\r",
+							"    if(verificaCEP === undefined){\r",
+							"        pm.test(\"CEP inválido\");\r",
+							"    }else{\r",
+							"        var cep = jsonObect ['soap:Envelope']['soap:Body']['ns2:consultaCEPResponse']['return']['cep'];\r",
+							"\t    var bairro = jsonObect ['soap:Envelope']['soap:Body']['ns2:consultaCEPResponse']['return']['bairro'];\r",
+							"\t    var cidade = jsonObect ['soap:Envelope']['soap:Body']['ns2:consultaCEPResponse']['return']['cidade'];\r",
+							"\t    var uf = jsonObect ['soap:Envelope']['soap:Body']['ns2:consultaCEPResponse']['return']['uf'];\r",
+							"\r",
+							"        pm.test(\"Verifica campo Bairro 'vazio'\", function(){pm.expect(bairro).not.eq(\"\")});\r",
+							"        pm.test(\"Verifica campo Cidade 'vazio'\", function(){pm.expect(cidade).not.eq(\"\")});\r",
+							"        pm.test(\"Verifica campo CEP 'vazio'\", function(){pm.expect(cep).not.eq(\"\")});\r",
+							"        pm.test(\"Verifica campo UF 'vazio'\", function(){pm.expect(uf).not.eq(\"\")});\r",
+							"    }\r",
+							"}\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"//CEP inválido\r",
+							"//var cpf = \"08360-010\";\r",
+							"//Com campo cazio\r",
+							"//var cpf = \"38360-000\";\r",
+							"//sem nenhum campo vazio\r",
+							"var cpf = \"38204-054\"; \r",
+							"\r",
+							"pm.variables.set(\"CPF\",cpf)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <consultaCEP xmlns=\"http://cliente.bean.master.sigep.bsb.correios.com.br/\">\r\n            <cep xmlns=\"\">{{CPF}}</cep>\r\n        </consultaCEP>\r\n    </Body>\r\n</Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente",
+					"protocol": "https",
+					"host": [
+						"apps",
+						"correios",
+						"com",
+						"br"
+					],
+					"path": [
+						"SigepMasterJPA",
+						"AtendeClienteService",
+						"AtendeCliente"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
