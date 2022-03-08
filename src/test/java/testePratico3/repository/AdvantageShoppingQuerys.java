@@ -1,4 +1,4 @@
-package testePrático3.repository;
+package testePratico3.repository;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

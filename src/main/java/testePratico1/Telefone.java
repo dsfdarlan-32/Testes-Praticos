@@ -1,4 +1,4 @@
-package testePrático1;
+package testePratico1;
 
 public class Telefone {
 	private String numero_linha;

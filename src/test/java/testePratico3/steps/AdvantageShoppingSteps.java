@@ -1,4 +1,4 @@
-package testePrático3.steps;
+package testePratico3.steps;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
@@ -7,8 +7,8 @@ import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
-import testePrático3.driver.Driver;
-import testePrático3.pages.AdvantageShoppingPage;
+import testePratico3.driver.Driver;
+import testePratico3.pages.AdvantageShoppingPage;
 
 public class AdvantageShoppingSteps {
 	WebDriver driver;

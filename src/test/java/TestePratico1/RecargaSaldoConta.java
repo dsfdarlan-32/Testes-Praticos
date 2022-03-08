@@ -1,6 +1,6 @@
 package TestePratico1;
 
-import testePrático1.Conta;
+import testePratico1.Conta;
 
 public class RecargaSaldoConta {
 	

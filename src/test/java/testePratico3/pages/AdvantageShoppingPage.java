@@ -1,9 +1,9 @@
-package testePrático3.pages;
+package testePratico3.pages;
 
 import java.util.Map;
 
-import testePrático3.maps.AdvantageShoppingMaps;
-import testePrático3.repository.AdvantageShoppingQuerys;
+import testePratico3.maps.AdvantageShoppingMaps;
+import testePratico3.repository.AdvantageShoppingQuerys;
 
 public class AdvantageShoppingPage extends BasePage {
 	AdvantageShoppingMaps advantageShoppingMaps;

@@ -4,9 +4,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import testePrático1.Cliente;
-import testePrático1.Conta;
-import testePrático1.Telefone;
+import testePratico1.Cliente;
+import testePratico1.Conta;
+import testePratico1.Telefone;
 
 
 public class Teste {

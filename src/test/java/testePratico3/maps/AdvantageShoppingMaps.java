@@ -1,4 +1,4 @@
-package testePrático3.maps;
+package testePratico3.maps;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.By.ByXPath;

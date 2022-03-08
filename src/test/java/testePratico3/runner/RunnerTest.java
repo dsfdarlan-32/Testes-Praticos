@@ -1,4 +1,4 @@
-package testePrático3.runner;
+package testePratico3.runner;
 
 import org.junit.runner.RunWith;
 

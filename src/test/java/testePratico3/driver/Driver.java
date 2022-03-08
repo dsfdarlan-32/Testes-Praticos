@@ -1,4 +1,4 @@
-package testePrático3.driver;
+package testePratico3.driver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
