@@ -3,6 +3,7 @@ package testePratico3.steps;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
+import io.cucumber.java.After;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Então;
@@ -14,17 +15,22 @@ public class AdvantageShoppingSteps {
 	WebDriver driver;
 	AdvantageShoppingPage advantageShoppingPage;
 
+	@After
+	public void AdvantageShoppingSteps2() {
+		driver.close();
+
+	}
+
 	public AdvantageShoppingSteps() {
 		driver = Driver.getDriver();
 		advantageShoppingPage = new AdvantageShoppingPage();
 	}
-	
+
 	@Dado("Que accesso a url {string}")
 	public void queAccessoAURL(String string) {
 		driver.get(string);
 	}
-	
-	
+
 	@E("Clico na opção {string} do menu")
 	public void clicoNaOpcaoDoMenu(String string) {
 		advantageShoppingPage.clicarSpcialOffer();
@@ -39,7 +45,6 @@ public class AdvantageShoppingSteps {
 	public void validoQueAsEspecificacoesDoProdutoDeAcordoComAsInformacoesRetornadasDoBancoDeAutomacao() {
 		advantageShoppingPage.scrollPsroductSpecifications();
 		Assert.assertTrue(advantageShoppingPage.validarEspecificaçõesWebXBancoDados());
-		driver.close();
 	}
 
 	@E("Alterar a cor do produto de acordo com a cor informada no banco de automação")
@@ -55,7 +60,6 @@ public class AdvantageShoppingSteps {
 	@Então("Validar que produto foi adicionado ao carrinho com a cor selecionada")
 	public void validarQueProdutoFoiAdicionadoAoCarrinhoComACorSelecionada() {
 		Assert.assertTrue(advantageShoppingPage.validarCorEscolhida());
-		driver.close();
 	}
 
 	@E("Pesquiso o produto clicando no ícone de lupa {string}")
@@ -91,7 +95,6 @@ public class AdvantageShoppingSteps {
 	@E("Realizo um update no banco de automação alterar a cor existente no banco para a cor selecionada no teste")
 	public void realizoUmUpdateNoBancoDeAutomaçãoAlterarACorExistenteNoBancoParaACorSelecionadaNoTeste() {
 		Assert.assertTrue(advantageShoppingPage.updateCor());
-		driver.close();
 	}
 
 	@E("Clicar no carrinho de compras")
@@ -107,6 +110,5 @@ public class AdvantageShoppingSteps {
 	@Então("Valido que o carrinho de compras está vazio")
 	public void validoQueOCarrinhoDeComprasEstáVazio() {
 		Assert.assertTrue(advantageShoppingPage.validacarrinhoVazio());
-		driver.close();
 	}
 }
