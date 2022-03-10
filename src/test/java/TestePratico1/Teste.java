@@ -45,6 +45,6 @@ public class Teste {
 	public void TestePratico1D() {
 		Recarga teste = new Recarga();
 		teste.recargaSaldoConta(cliente, 30);
-		Assert.assertFalse("Valor da recarga maior do que saldo em conta", teste.recargaSaldoTelefoneDA(cliente, 50));
+		Assert.assertFalse(teste.recargaSaldoTelefoneDA(cliente, 50));
 	}
 }

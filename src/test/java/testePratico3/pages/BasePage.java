@@ -4,12 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import testePratico3.driver.Driver;
 
 public class BasePage {
+
 	WebDriver driver = Driver.getDriver();
 
 	public void click(By by) {
@@ -22,11 +21,6 @@ public class BasePage {
 
 	public Boolean isDisplayed(By by) {
 		return driver.findElement(by).isDisplayed();
-	}
-
-	public void waitElement(By by, Integer n) {
-		WebDriverWait wait = new WebDriverWait(driver, n);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 	}
 
 	public void clear(By by) {
@@ -66,7 +60,7 @@ public class BasePage {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0," + n + ")", "");
 	}
-	
+
 	public String getAttribute(By by, String attribute) {
 		return driver.findElement(by).getAttribute(attribute);
 	}

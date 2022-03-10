@@ -7,14 +7,15 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "features", 
-		glue = {""}, 
-		tags = "@Teste2", 
-		plugin = { "json:target/cucumber.json" , "rerun:target/rerun.txt" }, 
-		monochrome = false, 
-		dryRun = false, 
-		snippets = CucumberOptions.SnippetType.CAMELCASE)
+		features = "features",
+        tags = "@Teste1",
+        glue = {""},
+        publish = true,
+        monochrome = true,
+        snippets = CucumberOptions.SnippetType.CAMELCASE,
+        dryRun = false,
+        plugin = {"json:target/cucumber.json", "rerun:target/rerun.txt"})
 
 public class RunnerTest {
-	
-}
+}		
+

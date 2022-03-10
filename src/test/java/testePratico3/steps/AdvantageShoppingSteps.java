@@ -17,8 +17,7 @@ public class AdvantageShoppingSteps {
 
 	@After
 	public void AdvantageShoppingSteps2() {
-		driver.close();
-
+		Driver.closeDriver();
 	}
 
 	public AdvantageShoppingSteps() {
@@ -43,7 +42,6 @@ public class AdvantageShoppingSteps {
 
 	@Então("Valido que as especificações do produto de acordo com as informações retornadas do banco de automação")
 	public void validoQueAsEspecificacoesDoProdutoDeAcordoComAsInformacoesRetornadasDoBancoDeAutomacao() {
-		advantageShoppingPage.scrollPsroductSpecifications();
 		Assert.assertTrue(advantageShoppingPage.validarEspecificaçõesWebXBancoDados());
 	}
 

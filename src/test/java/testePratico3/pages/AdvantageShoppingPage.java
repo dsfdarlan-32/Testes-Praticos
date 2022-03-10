@@ -15,18 +15,13 @@ public class AdvantageShoppingPage extends BasePage {
 	}
 
 	public void clicarSpcialOffer() {
-		forceWait(4000);
+		forceWait(5000);
 		click(advantageShoppingMaps.spcialOffer);
 	}
 
 	public void clicarSeeOffer() {
-		forceWait(1500);
+		forceWait(2000);
 		click(advantageShoppingMaps.seeOffer);
-	}
-
-	public void scrollPsroductSpecifications() {
-		waitElement(advantageShoppingMaps.productSpecifications, 10);
-		moveToDefaultContent();
 	}
 
 	/**
@@ -41,6 +36,7 @@ public class AdvantageShoppingPage extends BasePage {
 		Map<String, String> productSpecifications;
 		productSpecifications = AdvantageShoppingQuerys.productSpecificationsSelect();
 		scrollDown(500);
+		forceWait(4000);
 		for (String chaveMap : productSpecifications.keySet()) {
 			String coluna = chaveMap.replace("_", " ");
 			String valor = productSpecifications.get(chaveMap);
@@ -52,14 +48,14 @@ public class AdvantageShoppingPage extends BasePage {
 
 	public void escolherCorDB() {
 		AdvantageShoppingQuerys AdvantageShoppingQuerys = new AdvantageShoppingQuerys();
-		forceWait(3000);
+		forceWait(3500);
 		Map<String, String> corDB;
 		corDB = AdvantageShoppingQuerys.corSelect();
 		click(advantageShoppingMaps.escolherCor(corDB.get("COLOR")));
 	}
 
 	public void adicionarProdutoCarrinho() {
-		forceWait(3000);
+		forceWait(3500);
 		click(advantageShoppingMaps.addToCart);
 	}
 
@@ -75,9 +71,9 @@ public class AdvantageShoppingPage extends BasePage {
 		AdvantageShoppingQuerys AdvantageShoppingQuerys = new AdvantageShoppingQuerys();
 		Map<String, String> nameProductDB;
 		nameProductDB = AdvantageShoppingQuerys.nameProductSelect();
-		forceWait(3000);
+		forceWait(5000);
 		click(advantageShoppingMaps.pesquisarClicar);
-		forceWait(1000);
+		forceWait(1500);
 		sendKeys(advantageShoppingMaps.pesquisarPreencher, nameProductDB.get("NAME_PRODUCT"));
 	}
 
@@ -91,7 +87,7 @@ public class AdvantageShoppingPage extends BasePage {
 
 	public void escolherDiferenteDaCorDB() {
 		AdvantageShoppingQuerys advantageShoppingQuerys = new AdvantageShoppingQuerys();
-		forceWait(3000);
+		forceWait(3500);
 		Map<String, String> corDB;
 		corDB = advantageShoppingQuerys.corSelect();
 		novaCor = getAttribute(advantageShoppingMaps.notCorProdutoCarrinho(corDB.get("COLOR")), "title");
@@ -99,19 +95,19 @@ public class AdvantageShoppingPage extends BasePage {
 	}
 
 	public void adicionarMais() {
-		forceWait(3000);
+		forceWait(3500);
 		String valoProdutor = getValue(advantageShoppingMaps.valorProduto);
 		valorSemAdicionar = Float.parseFloat(valoProdutor.trim().replace("$", ""));
 		click(advantageShoppingMaps.adicionarMais);
 	}
 
 	public void clicarCheckOutPopUp() {
-		forceWait(3000);
+		forceWait(3500);
 		click(advantageShoppingMaps.checkOutPopUp);
 	}
 
 	public Boolean validarSomaProdutos() {
-		forceWait(3000);
+		forceWait(3500);
 		String valorTotalProdutor = getValue(advantageShoppingMaps.valorTotalProduto);
 		Float valorTotal = Float.parseFloat(valorTotalProdutor.trim().replace("$", ""));
 		return valorTotal.equals(valorSemAdicionar * 2);
@@ -127,12 +123,12 @@ public class AdvantageShoppingPage extends BasePage {
 	}
 
 	public void removeItemCarrinho() {
-		forceWait(1500);
+		forceWait(2000);
 		click(advantageShoppingMaps.removeItem);
 	}
 
 	public Boolean validacarrinhoVazio() {
-		forceWait(1000);
+		forceWait(1500);
 		return isDisplayed(advantageShoppingMaps.carrinhoVazio);
 	}
 }
