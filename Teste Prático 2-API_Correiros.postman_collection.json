@@ -48,9 +48,9 @@
 							"//Com campo cazio\r",
 							"//var cpf = \"38360-000\";\r",
 							"//sem nenhum campo vazio\r",
-							"var cpf = \"38204-054\"; \r",
+							"var cep = pm.globals.get(\"CEP\"); \r",
 							"\r",
-							"pm.variables.set(\"CPF\",cpf)"
+							"pm.variables.set(\"cep\",cep)"
 						],
 						"type": "text/javascript"
 					}
@@ -64,7 +64,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <consultaCEP xmlns=\"http://cliente.bean.master.sigep.bsb.correios.com.br/\">\r\n            <cep xmlns=\"\">{{CPF}}</cep>\r\n        </consultaCEP>\r\n    </Body>\r\n</Envelope>",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <consultaCEP xmlns=\"http://cliente.bean.master.sigep.bsb.correios.com.br/\">\r\n            <cep xmlns=\"\">{{cep}}</cep>\r\n        </consultaCEP>\r\n    </Body>\r\n</Envelope>",
 					"options": {
 						"raw": {
 							"language": "xml"
