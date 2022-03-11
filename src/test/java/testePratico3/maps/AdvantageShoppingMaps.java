@@ -19,7 +19,7 @@ public class AdvantageShoppingMaps {
 	public By carrinhoVazio = new ByXPath("//a[contains(text(),'SHOPPING')]/..//label[contains(text(),'cart is empty')]");
 
 	public By productSpecifications(String campo, String valor) {
-		return new ByXPath("//label[text()='" + campo + "']/..//label[text()='" + valor + "']");
+		return new ByXPath("//label[text()='" + campo + "']/..//label[text()='" + valor + "']/..");
 	}
 
 	public By escolherCor(String cor) {

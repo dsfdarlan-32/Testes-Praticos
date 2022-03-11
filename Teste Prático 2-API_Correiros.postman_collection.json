@@ -48,7 +48,7 @@
 							"//Com campo cazio\r",
 							"//var cpf = \"38360-000\";\r",
 							"//sem nenhum campo vazio\r",
-							"var cep = pm.globals.get(\"CEP\"); \r",
+							"var cep = pm.environment.get(\"CEP\"); \r",
 							"\r",
 							"pm.variables.set(\"cep\",cep)"
 						],

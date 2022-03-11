@@ -36,11 +36,11 @@ public class AdvantageShoppingPage extends BasePage {
 		Map<String, String> productSpecifications;
 		productSpecifications = AdvantageShoppingQuerys.productSpecificationsSelect();
 		scrollDown(500);
-		forceWait(4000);
+		forceWait(5000);
 		for (String chaveMap : productSpecifications.keySet()) {
 			String coluna = chaveMap.replace("_", " ");
 			String valor = productSpecifications.get(chaveMap);
-			if (!isDisplayed(advantageShoppingMaps.productSpecifications(coluna, valor)))
+			if (!isPresent(advantageShoppingMaps.productSpecifications(coluna, valor)))
 				return false;
 		}
 		return flag;
@@ -64,7 +64,7 @@ public class AdvantageShoppingPage extends BasePage {
 		AdvantageShoppingQuerys AdvantageShoppingQuerys = new AdvantageShoppingQuerys();
 		Map<String, String> corDB;
 		corDB = AdvantageShoppingQuerys.corSelect();
-		return isDisplayed(advantageShoppingMaps.corProdutoCarrinho(corDB.get("COLOR")));
+		return isPresent(advantageShoppingMaps.corProdutoCarrinho(corDB.get("COLOR")));
 	}
 
 	public void pesquisarProdutorDB() {
@@ -129,6 +129,6 @@ public class AdvantageShoppingPage extends BasePage {
 
 	public Boolean validacarrinhoVazio() {
 		forceWait(1500);
-		return isDisplayed(advantageShoppingMaps.carrinhoVazio);
+		return isPresent(advantageShoppingMaps.carrinhoVazio);
 	}
 }

@@ -19,8 +19,8 @@ public class BasePage {
 		driver.findElement(by).sendKeys(text);
 	}
 
-	public Boolean isDisplayed(By by) {
-		return driver.findElement(by).isDisplayed();
+	public Boolean isPresent(By by) {
+		return 0 != driver.findElements(by).size();
 	}
 
 	public void clear(By by) {
