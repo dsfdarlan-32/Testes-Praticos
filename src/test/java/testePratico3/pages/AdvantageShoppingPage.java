@@ -15,7 +15,7 @@ public class AdvantageShoppingPage extends BasePage {
 	}
 
 	public void clicarSpcialOffer() {
-		forceWait(5000);
+		forceWait(6000);
 		click(advantageShoppingMaps.spcialOffer);
 	}
 
