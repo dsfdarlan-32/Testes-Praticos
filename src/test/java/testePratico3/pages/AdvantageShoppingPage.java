@@ -109,7 +109,7 @@ public class AdvantageShoppingPage extends BasePage {
 	public Boolean validarSomaProdutos() {
 		forceWait(3500);
 		String valorTotalProdutor = getValue(advantageShoppingMaps.valorTotalProduto);
-		Float valorTotal = Float.parseFloat(valorTotalProdutor.trim().replace("$", ""));
+		Float valorTotal = Float.parseFloat(valorTotalProdutor.replace("$", "").replace(",", "").trim());
 		return valorTotal.equals(valorSemAdicionar * 2);
 	}
 
@@ -124,6 +124,7 @@ public class AdvantageShoppingPage extends BasePage {
 
 	public void removeItemCarrinho() {
 		forceWait(2000);
+		isPresent(advantageShoppingMaps.removeItem);
 		click(advantageShoppingMaps.removeItem);
 	}
 

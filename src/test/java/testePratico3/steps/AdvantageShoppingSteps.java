@@ -16,7 +16,7 @@ public class AdvantageShoppingSteps {
 	AdvantageShoppingPage advantageShoppingPage;
 
 	@After
-	public void AdvantageShoppingSteps2() {
+	public static void encerra() {
 		Driver.closeDriver();
 	}
 

@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features = "features",
-        tags = "@Teste1",
+//        tags = "@Teste1",
         glue = {""},
         publish = true,
         monochrome = true,
