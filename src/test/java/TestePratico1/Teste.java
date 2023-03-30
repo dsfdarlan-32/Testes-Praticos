@@ -25,13 +25,13 @@ public class Teste {
 	@Test
 	public void TestePratico1A() {
 		RecargaSaldoConta teste = new RecargaSaldoConta();
-		Assert.assertTrue("Deposito não Realiza", teste.recargaSaldoConta(conta, 10));
+		Assert.assertTrue("Deposito não Realizado", teste.recargaSaldoConta(conta, 10));
 	}
 	
 	@Test
 	public void TestePratico1B() {
 		RecargaSaldoTelefone teste = new RecargaSaldoTelefone();
-		Assert.assertTrue("Recarga não Realiza", teste.recargaSaldoTelefone(telefone, 10));
+		Assert.assertTrue("Deposito não Realizado", teste.recargaSaldoTelefone(telefone, 10));
 	}
 
 	@Test
